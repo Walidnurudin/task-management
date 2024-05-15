@@ -10,11 +10,14 @@ type FormInputProps = {
 
 const FormInput = ({ back = () => { }, handleSubmit = () => { }, value = '', setValue = () => { } }: FormInputProps) => {
     return (
-        <div className='form'>
-            <img src={BackIcon} alt="back" onClick={back} />
-            <input type="text" required placeholder="Masukan tugas" onChange={e => setValue(e.target.value)} value={value} />
-            <img src={PlusIcon} alt="add" onClick={() => handleSubmit(value)} />
-        </div>
+        <>
+            <span className='no-data'>Masukan tugas</span>
+            <div className='form'>
+                <img src={BackIcon} alt="back" onClick={back} />
+                <input type="text" required placeholder="Masukan tugas" onChange={e => setValue(e.target.value)} value={value} />
+                <img src={PlusIcon} alt="add" onClick={() => handleSubmit(value)} />
+            </div>
+        </>
     )
 }
 
